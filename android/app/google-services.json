@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "683796707357",
+    "project_id": "flutter-agora-video-call-23afa",
+    "storage_bucket": "flutter-agora-video-call-23afa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683796707357:android:671b9b461c8329ae94aef4",
+        "android_client_info": {
+          "package_name": "com.example.flutter_agora_video_call"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtmoeYKVAB_zYX9uqunIfRsSTK2U2nKLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
