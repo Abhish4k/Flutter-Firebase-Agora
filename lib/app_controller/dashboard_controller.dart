@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_agora_video_call/app_enums/dashboard_enum/dashboard_enum.dart';
+import 'package:flutter_agora_video_call/app_models/bottom_navigation_model/bottom_navigation_model.dart';
 import 'package:flutter_agora_video_call/app_models/otp_model.dart/otp_model.dart';
+import 'package:flutter_agora_video_call/utils/app_images.dart';
+import 'package:flutter_agora_video_call/utils/app_strings.dart';
 import 'package:get/get.dart';
 import '../utils/app_text_controller.dart';
 
@@ -7,8 +11,13 @@ class DashboardController extends GetxController {
   FocusNode? oneFocus, twoFocus, threeFocus, fourFocus, fiveFocus, sixFocus;
   List<OtpModel> otpControllerList = <OtpModel>[];
   List<FocusNode> otpFocusList = <FocusNode>[];
-  // RxInt screenIndex = HOME_INDEX.obs;
   RxList<Widget> screenList = <Widget>[].obs;
+
+  static Rx<DashboardEnum> dashboardEnum = DashboardEnum.home.obs;
+  static Rx<DashboardEnum> get getDashboardEnum => dashboardEnum;
+  static set setDashboardEnum(DashboardEnum dbEnum) {
+    dashboardEnum.value = dbEnum;
+  }
   // RxList<BottomNavigationModel> homeList = <BottomNavigationModel>[].obs;
 
   @override
@@ -89,6 +98,35 @@ class DashboardController extends GetxController {
     return otpControllerList;
   }
 
+  List<BottomNavigationModel> fetchBottomNavigationBar() {
+    List<BottomNavigationModel> bottomList = [];
+    // BuildContext context;
+    bottomList = [
+      BottomNavigationModel(
+        selectedImage: AppImages.homeSelectedIcon,
+        unselectedImage: AppImages.homeUnselectedIcon,
+        onTab: () {},
+        isSvg: true,
+        title: AppStrings.home,
+      ),
+      BottomNavigationModel(
+        selectedImage: AppImages.connectionsSelectedIcon,
+        unselectedImage: AppImages.connectionsUnselectedIcon,
+        onTab: () {},
+        isSvg: true,
+        title: AppStrings.connections,
+      ),
+      BottomNavigationModel(
+        selectedImage: AppImages.profileSelectedIcon,
+        unselectedImage: AppImages.profileUnselectedIcon,
+        onTab: () {},
+        isSvg: true,
+        title: AppStrings.profile,
+      ),
+    ];
+    return bottomList;
+  }
+
   // RxList<Widget> fetchScreenList() {
   //   screenList.value = [
   //     // const HomeScreen(),
@@ -152,42 +190,6 @@ class DashboardController extends GetxController {
   //       userId: AppStorageHelper.getUserId,
   //     );
   //   }
-  // }
-
-  // List<BottomNavigationModel> fetchBottomNavigationBar() {
-  //   List<BottomNavigationModel> bottomList = [];
-  //   // BuildContext context;
-  //   bottomList = [
-  //     BottomNavigationModel(
-  //       selectedImage: AppImages.homeSelectedIcon,
-  //       unselectedImage: AppImages.homeUnselectedIcon,
-  //       onTab: () => AppClickListener.onTabHome(),
-  //       isSvg: true,
-  //       title: AppStrings.home,
-  //     ),
-  //     BottomNavigationModel(
-  //       selectedImage: AppImages.reportSelectedIcon,
-  //       unselectedImage: AppImages.reportUnselectedIcon,
-  //       onTab: () => AppClickListener.onTabReport(),
-  //       isSvg: true,
-  //       title: AppStrings.report,
-  //     ),
-  //     BottomNavigationModel(
-  //       selectedImage: AppImages.notificationSelectedIcon,
-  //       unselectedImage: AppImages.notificationUnselectedIcon,
-  //       onTab: () => AppClickListener.onTabNotification(),
-  //       isSvg: true,
-  //       title: AppStrings.notifications,
-  //     ),
-  //     BottomNavigationModel(
-  //       selectedImage: AppImages.demiUserImg,
-  //       unselectedImage: AppStorageHelper.getUserImage,
-  //       onTab: () => AppClickListener.onTabProfile(),
-  //       isSvg: false,
-  //       title: AppStrings.profile,
-  //     ),
-  //   ];
-  //   return bottomList;
   // }
 
   // RxList<BottomNavigationModel> fetchHomeList() {

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_agora_video_call/app_widget/bottom_navigation_widget/bottom_navigation_widget.dart';
+import 'package:flutter_agora_video_call/main.dart';
+import 'package:flutter_agora_video_call/utils/app_const_size.dart';
+import 'package:flutter_agora_video_call/utils/app_text_sizes.dart';
 import 'package:get/get.dart';
 import 'package:flutter_agora_video_call/app_mixins/dashboard_mixin/dashboard_mixin.dart';
 
@@ -27,6 +31,12 @@ class DashboardScreen extends StatelessWidget {
           },
         );
       }),
+      bottomNavigationBar: BottomNavigationWidget(
+        itemList: dashboardController.fetchBottomNavigationBar(),
+        selectedIndex: 0.obs,
+        height: AppConstSize.size80,
+        width: appWidth(context: context),
+      ),
     );
   }
 }

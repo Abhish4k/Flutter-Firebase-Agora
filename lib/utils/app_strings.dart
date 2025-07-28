@@ -68,4 +68,9 @@ class AppStrings {
       "Password must have Minimum eight characters, at least one letter, one number and one special character";
   static const String accHasBeenCreatedSucessfully =
       "Account has been created sucessfully!";
+
+  /// ------------- Dashboard Strings  ----------------///
+  static const String home = "Home";
+  static const String connections = "Connections";
+  static const String profile = "Profile";
 }
