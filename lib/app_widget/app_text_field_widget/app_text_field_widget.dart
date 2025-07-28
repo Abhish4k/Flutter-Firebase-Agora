@@ -6,10 +6,10 @@ import 'package:flutter_agora_video_call/utils/app_const_size.dart';
 import 'package:flutter_agora_video_call/utils/app_text_sizes.dart';
 
 class AppTextFieldWidget extends StatelessWidget {
-  TextEditingController textEditingController;
-  String title, hintText;
+  final TextEditingController textEditingController;
+  final String title, hintText;
 
-  AppTextFieldWidget({
+  const AppTextFieldWidget({
     super.key,
     required this.textEditingController,
     required this.title,

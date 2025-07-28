@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_agora_video_call/app_widget/otp_input_widget/otp_input_widget.dart';
 import 'package:flutter_agora_video_call/app_widget/text_widget/text_widget.dart';
-import 'package:flutter_agora_video_call/helper/data_helper.dart';
 import 'package:flutter_agora_video_call/main.dart';
 import 'package:flutter_agora_video_call/utils/app_color.dart';
 import 'package:flutter_agora_video_call/utils/app_const_size.dart';
@@ -41,21 +40,21 @@ class VerifyOtpScreen extends StatelessWidget {
   }
 
   // Function that will make all the numbers of Otp fiels as a string like 1 2 3 4 5 6 to 123456
-  String _getOtpController() {
-    String otp = "";
+  // String _getOtpController() {
+  //   String otp = "";
 
-    for (int i = 0; i < dashboardController.getOtpList().length; i++) {
-      otp += dashboardController
-          .getOtpList()[i]
-          .textEditingController
-          .text
-          .toString()
-          .trim();
-    }
+  //   for (int i = 0; i < dashboardController.getOtpList().length; i++) {
+  //     otp += dashboardController
+  //         .getOtpList()[i]
+  //         .textEditingController
+  //         .text
+  //         .toString()
+  //         .trim();
+  //   }
 
-    DataHelper.logValue('otpFields', otp);
-    return otp;
-  }
+  //   DataHelper.logValue('otpFields', otp);
+  //   return otp;
+  // }
 
   // OTP Fields View
   _getOtpFields({required BuildContext context}) => Container(

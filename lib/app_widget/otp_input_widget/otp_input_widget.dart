@@ -11,11 +11,11 @@ class OtpInput extends StatelessWidget {
   final TextEditingController controller;
   final bool autoFocus;
   final RxInt index;
-  double height, width;
-  List<FocusNode> focusNode;
-  int otpLength;
+  final double height, width;
+  final List<FocusNode> focusNode;
+  final int otpLength;
 
-  OtpInput({
+  const OtpInput({
     required this.controller,
     required this.autoFocus,
     required this.index,

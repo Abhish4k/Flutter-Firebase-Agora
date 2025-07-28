@@ -7,11 +7,11 @@ import 'package:flutter_agora_video_call/utils/image_assets.dart';
 import 'package:get/get.dart';
 
 class BottomNavigationItemWidget extends StatelessWidget {
-  BuildContext context;
-  BottomNavigationModel bottomNavigationModel;
-  RxBool isSelected;
+  final BuildContext context;
+  final BottomNavigationModel bottomNavigationModel;
+  final RxBool isSelected;
 
-  BottomNavigationItemWidget({
+  const BottomNavigationItemWidget({
     super.key,
     required this.bottomNavigationModel,
     required this.isSelected,

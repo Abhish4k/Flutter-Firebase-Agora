@@ -7,11 +7,11 @@ import '../../utils/app_color.dart';
 import 'bottom_navigation_item_widget.dart';
 
 class BottomNavigationWidget extends StatelessWidget {
-  List<BottomNavigationModel> itemList;
-  RxInt selectedIndex;
-  double width, height;
+  final List<BottomNavigationModel> itemList;
+  final RxInt selectedIndex;
+  final double width, height;
 
-  BottomNavigationWidget({
+  const BottomNavigationWidget({
     super.key,
     this.height = AppConstSize.size40,
     this.width = AppConstSize.size150,
