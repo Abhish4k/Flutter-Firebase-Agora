@@ -56,9 +56,12 @@ class BottomNavigationItemWidget extends StatelessWidget {
                 : imageAsset(
                     image: isSelected.value
                         ? bottomNavigationModel.selectedImage
-                        : bottomNavigationModel.selectedImage,
+                        : bottomNavigationModel.unselectedImage,
                     width: AppConstSize.size30,
                     height: AppConstSize.size30,
+                    color: isSelected.value
+                        ? AppColor.dotColor
+                        : AppColor.dotColor.withValues(alpha: 0.8),
                     boxFit: BoxFit.fill,
                   ),
           ),
@@ -66,7 +69,9 @@ class BottomNavigationItemWidget extends StatelessWidget {
             child: textWidget(
               text: bottomNavigationModel.title,
               height: AppConstSize.size0,
-              colour: AppColor.grey,
+              colour: isSelected.value
+                  ? AppColor.dotColor
+                  : AppColor.dotColor.withValues(alpha: 0.8),
             ),
           ),
         ],

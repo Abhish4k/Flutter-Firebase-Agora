@@ -33,7 +33,7 @@ class DashboardScreen extends StatelessWidget {
       }),
       bottomNavigationBar: BottomNavigationWidget(
         itemList: dashboardController.fetchBottomNavigationBar(),
-        selectedIndex: 0.obs,
+        selectedIndex: dashboardController.screenIndex,
         height: AppConstSize.size80,
         width: appWidth(context: context),
       ),

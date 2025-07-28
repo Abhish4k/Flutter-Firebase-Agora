@@ -4,6 +4,7 @@ import 'package:flutter_agora_video_call/app_models/bottom_navigation_model/bott
 import 'package:flutter_agora_video_call/app_models/otp_model.dart/otp_model.dart';
 import 'package:flutter_agora_video_call/utils/app_images.dart';
 import 'package:flutter_agora_video_call/utils/app_strings.dart';
+import 'package:flutter_agora_video_call/utils/dashboard_screen_indexes.dart';
 import 'package:get/get.dart';
 import '../utils/app_text_controller.dart';
 
@@ -12,12 +13,8 @@ class DashboardController extends GetxController {
   List<OtpModel> otpControllerList = <OtpModel>[];
   List<FocusNode> otpFocusList = <FocusNode>[];
   RxList<Widget> screenList = <Widget>[].obs;
+  RxInt screenIndex = HOME_INDEX.obs;
 
-  static Rx<DashboardEnum> dashboardEnum = DashboardEnum.home.obs;
-  static Rx<DashboardEnum> get getDashboardEnum => dashboardEnum;
-  static set setDashboardEnum(DashboardEnum dbEnum) {
-    dashboardEnum.value = dbEnum;
-  }
   // RxList<BottomNavigationModel> homeList = <BottomNavigationModel>[].obs;
 
   @override
@@ -106,21 +103,21 @@ class DashboardController extends GetxController {
         selectedImage: AppImages.homeSelectedIcon,
         unselectedImage: AppImages.homeUnselectedIcon,
         onTab: () {},
-        isSvg: true,
+        isSvg: false,
         title: AppStrings.home,
       ),
       BottomNavigationModel(
         selectedImage: AppImages.connectionsSelectedIcon,
         unselectedImage: AppImages.connectionsUnselectedIcon,
         onTab: () {},
-        isSvg: true,
+        isSvg: false,
         title: AppStrings.connections,
       ),
       BottomNavigationModel(
         selectedImage: AppImages.profileSelectedIcon,
         unselectedImage: AppImages.profileUnselectedIcon,
         onTab: () {},
-        isSvg: true,
+        isSvg: false,
         title: AppStrings.profile,
       ),
     ];
