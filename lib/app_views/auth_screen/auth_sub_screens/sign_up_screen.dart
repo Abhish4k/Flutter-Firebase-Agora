@@ -28,13 +28,13 @@ class SignUpScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: [
               textWidget(
-                text: AppStrings.getStarted,
+                text: AppStrings.signUpAlternateHeading,
                 fontSize: AppConstSize.size24,
                 fontWeight: FontWeight.bold,
                 colour: AppColor.dotColor,
               ),
               textWidget(
-                text: AppStrings.registerWithVcConnekt,
+                text: AppStrings.signUpAlternateDesc,
                 fontSize: AppConstSize.size12,
                 fontWeight: FontWeight.w400,
                 colour: AppColor.textColor,

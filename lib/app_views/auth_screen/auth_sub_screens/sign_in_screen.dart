@@ -32,13 +32,13 @@ class SigninScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: [
               textWidget(
-                text: AppStrings.welcomeBack,
+                text: AppStrings.signInAlternateHeading,
                 fontSize: AppConstSize.size24,
                 fontWeight: FontWeight.bold,
                 colour: AppColor.dotColor,
               ),
               textWidget(
-                text: AppStrings.enterYourDetailsBelow,
+                text: AppStrings.signInAlternateDesc,
                 fontSize: AppConstSize.size12,
                 fontWeight: FontWeight.w400,
                 colour: AppColor.textColor,

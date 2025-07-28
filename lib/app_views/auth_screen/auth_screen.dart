@@ -150,15 +150,15 @@ class AuthScreen extends StatelessWidget {
   String authDescText({required AuthEnum authEnum}) {
     switch (authEnum) {
       case AuthEnum.signUp:
-        return AppStrings.signUpDesc;
+        return AppStrings.signUpMainDesc;
       case AuthEnum.signIn:
-        return AppStrings.signInDesc;
+        return AppStrings.signInMainDesc;
       case AuthEnum.forgetPassword:
-        return AppStrings.forgotPassDesc;
+        return AppStrings.forgotPassMainDesc;
       case AuthEnum.verifyOtp:
-        return AppStrings.verifyOtp;
+        return AppStrings.verifyOtpMainDesc;
       case AuthEnum.resetPassword:
-        return AppStrings.resetPassword;
+        return AppStrings.resetPasswordMainDesc;
     }
   }
 

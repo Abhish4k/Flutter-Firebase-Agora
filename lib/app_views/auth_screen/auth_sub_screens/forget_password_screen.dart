@@ -24,14 +24,14 @@ class ForgetPasswordScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: [
               textWidget(
-                text: AppStrings.letsHelpYouRegainAccess,
+                text: AppStrings.forgotPasswordAlternateHeading,
                 fontSize: AppConstSize.size24,
                 fontWeight: FontWeight.bold,
                 colour: AppColor.dotColor,
               ),
               SizedBox(height: AppConstSize.size5),
               textWidget(
-                text: AppStrings.enterYourEmailAndPasswordDesc,
+                text: AppStrings.forgotPasswordAlternateDesc,
                 fontSize: AppConstSize.size12,
                 fontWeight: FontWeight.w400,
                 alignment: TextAlign.center,

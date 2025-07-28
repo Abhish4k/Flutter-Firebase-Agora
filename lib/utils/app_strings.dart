@@ -19,30 +19,45 @@ class AppStrings {
   static const String forgotPassword = "Forgot Password ? ";
   static const String verifyOtp = "Verify OTP";
   static const String resetPassword = "Reset Password";
+  static const String enterNewPassword = "Enter New Password";
+  static const String confirmNewPassword = "Confirm New Password";
   static const String orLoginWith = "or Login with";
   static const String alreadyHaveAnAccount = "Already have an account?";
   static const String doNotHaveAnAccount = "Do not have an account?";
-  static const String welcomeBack = "Welcome Back";
-  static const String getStarted = "Get Started";
-  static const String letsHelpYouRegainAccess = "Let's help you regain access";
-
-  static const String enterYourEmailAndPasswordDesc =
-      "Enter your registered email or phone number, and we'll send you  One Time Password (OTP) to reset your password securely !";
   static const String google = "Google";
   static const String facebook = "Facebook";
   static const String noRecord = "No Record";
   static const String timeoutError = "Timeout Error";
   static const String checkInternetConnection = "Check Internet Connection";
-  static const String registerWithVcConnekt =
-      "Register with Vc-ConneKt to continue";
-  static const String enterYourDetailsBelow =
-      "Enter your details below to continue";
-  static const String signInDesc =
+
+  static const String signInMainDesc =
       "Sign in to start connecting\nwith people—face to face";
-  static const String signUpDesc =
+  static const String signInAlternateHeading = "Welcome Back";
+  static const String signInAlternateDesc =
+      "Enter your details below to continue";
+  static const String signUpMainDesc =
       "Join the Vc-ConneKt community\nand see the people who matter";
-  static const String forgotPassDesc =
+  static const String signUpAlternateHeading = "Get Started";
+  static const String signUpAlternateDesc =
+      "Register with Vc-ConneKt to continue";
+  static const String forgotPassMainDesc =
       "Forgot your password ?\nNo worries—let’s get you back into Vc-ConneKT!";
+  static const String forgotPasswordAlternateHeading =
+      "Let's help you regain access";
+  static const String forgotPasswordAlternateDesc =
+      "Enter your registered email or phone number, and we'll send you  One Time Password (OTP) to reset your password securely !";
+
+  static const String verifyOtpMainDesc =
+      "Verify OTP\nJust one more step to keep your account secure.";
+  static const String verifyOtpAlternateHeading = "Let’s Confirm It’s You";
+  static const String verifyOtpAlternateDesc =
+      "Enter the 6-digit code to unlock your next step.";
+
+  static const String resetPasswordMainDesc =
+      "Reset Password\nLet’s help you set a new password and get back in.";
+  static const String resetPasswordAlternateHeading = "Set New Password";
+  static const String resetPasswordAlternateDesc =
+      "Keep your account secure with a strong password.";
   static const String pleaseEnterValidEmail = "Please Enter a Valid Email!";
   static const String pleaseEnterEmail = "Please Enter Email!";
   static const String enterEmailorPhoneNo = "Email or phone number";

@@ -79,7 +79,11 @@ class AppClickListeners {
     AuthMixin.setAuthEnum = AuthEnum.verifyOtp;
   }
 
-  static onVerifyOtpButtonTap() {}
+  static onVerifyOtpButtonTap() {
+    AuthMixin.setAuthEnum = AuthEnum.resetPassword;
+  }
 
-  static onResetPasswordButtonTap() {}
+  static onResetPasswordButtonTap() {
+    AuthMixin.setAuthEnum = AuthEnum.signIn;
+  }
 }
