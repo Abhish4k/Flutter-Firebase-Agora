@@ -16,20 +16,20 @@ class PostsModel extends ApiObject<PostsModel> {
         code: dynamicData['code'],
         message: dynamicData['message'] ?? "",
         //When data is a list of object
-        postsList:
-            dynamicData['data'] == null || dynamicData['data']['posts'] == null
+        postsList: dynamicData['data'] == null
+            //  || dynamicData['data']['posts'] == null
             ? []
             : List<PostsDataModel>.from(
                 // when response coming like "data" : { 'posts':[{obj1},{obj2}]}
-                //if data comes like "data" : [{obj1},{obj2}] then use
+                //and if data comes like "data" : [{obj1},{obj2}] then use
                 //   (dynamicData['data'] as List).map(
                 //   (x) => PostsDataModel().fromMap(x),
                 // ),
-                dynamicData['data']['posts'].map(
-                  (x) => PostsDataModel().fromMap(x),
-                ),
+                dynamicData['data']
+                // ['posts']
+                .map((x) => PostsDataModel().fromMap(x)),
               ),
-        // When data is simmple object
+        // When data is simmple object like "data": {obj}
         //  dynamicData['data'] == null
         //     ? null
         //     : PostsModel().fromMap(

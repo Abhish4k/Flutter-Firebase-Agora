@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_agora_video_call/app_mixins/dashboard_mixin/dashboard_mixin.dart';
-import 'package:flutter_agora_video_call/app_models/app_service_model/posts_data_model.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});

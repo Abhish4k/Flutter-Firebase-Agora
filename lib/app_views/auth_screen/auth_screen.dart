@@ -70,8 +70,14 @@ class AuthScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    getAuthScreen(authEnum: AuthMixin.getAuthEnum.value),
-
+                    SizedBox(
+                      height: appHeight(context: context) * 0.52,
+                      child: SingleChildScrollView(
+                        child: getAuthScreen(
+                          authEnum: AuthMixin.getAuthEnum.value,
+                        ),
+                      ),
+                    ),
                     authBottomWidget(
                       context: context,
                       onTap: getAuthButtonTap(
@@ -107,7 +113,7 @@ class AuthScreen extends StatelessWidget {
       case AuthEnum.signIn:
         return AppStrings.signIn;
       case AuthEnum.forgetPassword:
-        return AppStrings.forgetPassword;
+        return AppStrings.confirm;
       case AuthEnum.verifyOtp:
         return AppStrings.verifyOtp;
       case AuthEnum.resetPassword:
@@ -132,9 +138,9 @@ class AuthScreen extends StatelessWidget {
           ),
         );
       case AuthEnum.forgetPassword:
-        return () => AppClickListeners.onForgetPasswordButtonTap();
+        return () => AppClickListeners.onForgetPasswordConfirmButtonTap();
       case AuthEnum.verifyOtp:
-        return () => AppClickListeners.onVreifyOtpButtonTap();
+        return () => AppClickListeners.onVerifyOtpButtonTap();
       case AuthEnum.resetPassword:
         return () => AppClickListeners.onResetPasswordButtonTap();
     }

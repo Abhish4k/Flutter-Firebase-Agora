@@ -75,9 +75,11 @@ class AppClickListeners {
     DataHelper.clearControllers();
   }
 
-  static onForgetPasswordButtonTap() {}
+  static onForgetPasswordConfirmButtonTap() {
+    AuthMixin.setAuthEnum = AuthEnum.verifyOtp;
+  }
 
-  static onVreifyOtpButtonTap() {}
+  static onVerifyOtpButtonTap() {}
 
   static onResetPasswordButtonTap() {}
 }

@@ -24,4 +24,27 @@ class AppApiService extends RestClient {
     );
     return postsModel;
   }
+
+  //   ///---------- call contact api ----------///
+  // Future<ApiResource<DeleteAccountModel>> callDeleteAccountApi({ required userId}) async {
+  //   const String url = ApiUrl.deleteAccount;
+
+  //   Map<String, dynamic> params = {};
+  //   Map<String, dynamic> queryParams = {};
+
+  //   FormData formData = FormData.fromMap({
+  //     userIdKey: userId,
+  //   });
+
+  //   ApiResource<DeleteAccountModel> deleteAccountModel = await request(
+  //     DeleteAccountModel(),
+  //     url,
+  //     Method.POST,
+  //     params,
+  //     queryParams,
+  //     formData,
+  //   );
+
+  //   return deleteAccountModel;
+  // }
 }
