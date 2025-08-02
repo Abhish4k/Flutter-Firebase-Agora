@@ -17,9 +17,9 @@ AppBar appBarWithWhiteStatusBar = AppBar(
 
 AppBar appBarWithThemeStatusBar = AppBar(
   toolbarHeight: 0.0,
-  backgroundColor: AppColor.themeColor,
+  backgroundColor: AppColor.dotColor,
   systemOverlayStyle: SystemUiOverlayStyle(
-    statusBarColor: AppColor.themeColor,
+    statusBarColor: AppColor.dotColor,
     statusBarIconBrightness: Platform.isIOS
         ? Brightness.dark
         : Brightness.light,

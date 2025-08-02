@@ -56,12 +56,14 @@ class BottomNavigationWidget extends StatelessWidget {
                 width: Get.width / 4.5,
                 alignment: Alignment.center,
                 padding: const EdgeInsets.only(right: 0.0),
-                child: /*Obx(() =>*/ BottomNavigationItemWidget(
-                  context: context,
-                  bottomNavigationModel: itemList[index],
-                  isSelected: selectedIndex.value == index
-                      ? true.obs
-                      : false.obs,
+                child: Obx(
+                  () => BottomNavigationItemWidget(
+                    context: context,
+                    bottomNavigationModel: itemList[index],
+                    isSelected: selectedIndex.value == index
+                        ? true.obs
+                        : false.obs,
+                  ),
                 ),
               ),
             );

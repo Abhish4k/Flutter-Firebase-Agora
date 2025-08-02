@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_agora_video_call/app_models/bottom_navigation_model/bottom_navigation_model.dart';
 import 'package:flutter_agora_video_call/app_models/otp_model.dart/otp_model.dart';
+import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/connections_screen.dart';
+import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/home_screen.dart';
+import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/profile_screen.dart';
 import 'package:flutter_agora_video_call/utils/app_images.dart';
 import 'package:flutter_agora_video_call/utils/app_strings.dart';
 import 'package:flutter_agora_video_call/utils/dashboard_screen_indexes.dart';
@@ -101,21 +104,27 @@ class DashboardController extends GetxController {
       BottomNavigationModel(
         selectedImage: AppImages.homeSelectedIcon,
         unselectedImage: AppImages.homeUnselectedIcon,
-        onTab: () {},
+        onTab: () {
+          screenIndex.value = HOME_INDEX;
+        },
         isSvg: false,
         title: AppStrings.home,
       ),
       BottomNavigationModel(
         selectedImage: AppImages.connectionsSelectedIcon,
         unselectedImage: AppImages.connectionsUnselectedIcon,
-        onTab: () {},
+        onTab: () {
+          screenIndex.value = CONNECTIONS_INDEX;
+        },
         isSvg: false,
         title: AppStrings.connections,
       ),
       BottomNavigationModel(
         selectedImage: AppImages.profileSelectedIcon,
         unselectedImage: AppImages.profileUnselectedIcon,
-        onTab: () {},
+        onTab: () {
+          screenIndex.value = PROFILE_INDEX;
+        },
         isSvg: false,
         title: AppStrings.profile,
       ),
@@ -123,16 +132,11 @@ class DashboardController extends GetxController {
     return bottomList;
   }
 
-  // RxList<Widget> fetchScreenList() {
-  //   screenList.value = [
-  //     // const HomeScreen(),
-  //     // const ReportScreen(),
-  //     // const NotificationScreen(),
-  //     // const ProfileScreen(),
-  //   ];
+  RxList<Widget> fetchScreenList() {
+    screenList.value = [HomeScreen(), ConnectionsScreen(), ProfileScreen()];
 
-  //   return screenList;
-  // }
+    return screenList;
+  }
 
   // void onTap({
   //   required int index,

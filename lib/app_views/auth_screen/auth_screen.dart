@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_agora_video_call/app_click_listeners/app_click_listeners.dart';
 import 'package:flutter_agora_video_call/app_enums/auth_enums/auth_enums.dart';
 import 'package:flutter_agora_video_call/app_mixins/auth_mixin/auth_mixin.dart';
-import 'package:flutter_agora_video_call/app_models/auth_request_model.dart';
 import 'package:flutter_agora_video_call/app_views/auth_screen/auth_sub_screens/forget_password_screen.dart';
 import 'package:flutter_agora_video_call/app_views/auth_screen/auth_sub_screens/reset_password_screen.dart';
 import 'package:flutter_agora_video_call/app_views/auth_screen/auth_sub_screens/sign_up_screen.dart';
@@ -15,7 +14,6 @@ import 'package:flutter_agora_video_call/utils/app_const_size.dart';
 import 'package:flutter_agora_video_call/utils/app_images.dart';
 import 'package:flutter_agora_video_call/utils/app_status_bar.dart';
 import 'package:flutter_agora_video_call/utils/app_strings.dart';
-import 'package:flutter_agora_video_call/utils/app_text_controller.dart';
 import 'package:flutter_agora_video_call/utils/app_text_sizes.dart';
 import 'package:flutter_agora_video_call/utils/image_assets.dart';
 import 'package:get/get.dart';
@@ -124,19 +122,9 @@ class AuthScreen extends StatelessWidget {
   Function() getAuthButtonTap({required AuthEnum authEnum}) {
     switch (authEnum) {
       case AuthEnum.signUp:
-        return () => AppClickListeners.onSignUpButtonTap(
-          authRequestModel: AuthRequestModel(
-            email: emailController.text.toString(),
-            password: passwordController.text.toString(),
-          ),
-        );
+        return () => AppClickListeners.onSignUpButtonTap();
       case AuthEnum.signIn:
-        return () => AppClickListeners.onSignInButtonTap(
-          authRequestModel: AuthRequestModel(
-            email: emailController.text.toString(),
-            password: passwordController.text.toString(),
-          ),
-        );
+        return () => AppClickListeners.onSignInButtonTap();
       case AuthEnum.forgetPassword:
         return () => AppClickListeners.onForgetPasswordConfirmButtonTap();
       case AuthEnum.verifyOtp:

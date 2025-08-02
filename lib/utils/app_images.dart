@@ -6,6 +6,9 @@ class AppImages {
   static const closeEyeImg = "${appImagesPath}close_eye.png";
   static const openEyeImg = "${appImagesPath}open_eye_icon.png";
   static const backImg = "${appImagesPath}arrow.png";
+  static const notificationImg = "${appImagesPath}notification.png";
+  static const chatImg = "${appImagesPath}chat.png";
+  static const editImg = "${appImagesPath}edit.png";
   static const homeSelectedIcon = "${appImagesPath}home_selected_image.png";
   static const homeUnselectedIcon = "${appImagesPath}home_unselected_image.png";
   static const connectionsSelectedIcon =
