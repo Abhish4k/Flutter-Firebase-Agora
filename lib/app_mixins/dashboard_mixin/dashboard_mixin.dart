@@ -19,18 +19,16 @@ mixin DashboardMixin {
     setPostsList = [];
     await AppApiService().callGetPostApi().then((value) {
       DataHelper.isLoading.value = false;
-      if (value != null) {
-        if (value.data != null) {
-          if (value.code == 200 || value.code == 201) {
-            if (value.data!.postsList != null) {
-              setPostsList = value.data!.postsList!;
-            }
-          } else {
-            DataHelper.showAppToast(
-              message: value.message,
-              bkgColor: AppColor.dotColor,
-            );
+      if (value.data != null) {
+        if (value.code == 200 || value.code == 201) {
+          if (value.data!.postsList != null) {
+            setPostsList = value.data!.postsList!;
           }
+        } else {
+          DataHelper.showAppToast(
+            message: value.message,
+            bkgColor: AppColor.dotColor,
+          );
         }
       }
     });

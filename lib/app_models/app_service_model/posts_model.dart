@@ -60,27 +60,27 @@ class PostsModel extends ApiObject<PostsModel> {
   @override
   Map<String, dynamic>? toMap(PostsModel object) {
     final Map<String, dynamic> data = <String, dynamic>{};
-    if (object != null) {
-      data['code'] = object.code;
-      data['message'] = object.message;
-      data['data'] =
-          //When Data is List
-          object.postsList != []
-          ? List<PostsDataModel>.from(
-              object.postsList!.map((x) => PostsDataModel().toMap(x)),
-            )
-          : [];
+    // if (object != null) {
+    data['code'] = object.code;
+    data['message'] = object.message;
+    data['data'] =
+        //When Data is List
+        object.postsList != []
+        ? List<PostsDataModel>.from(
+            object.postsList!.map((x) => PostsDataModel().toMap(x)),
+          )
+        : [];
 
-      //When data is an object
-      // object.data != null
-      // ? PostsModel().toMap(
-      //     object.data!,
-      //   )
-      // : null;
-      return data;
-    } else {
-      return null;
-    }
+    //When data is an object
+    // object.data != null
+    // ? PostsModel().toMap(
+    //     object.data!,
+    //   )
+    // : null;
+    return data;
+    // } else {
+    //   return null;
+    // }
   }
 
   @override

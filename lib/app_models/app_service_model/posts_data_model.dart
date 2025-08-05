@@ -22,15 +22,15 @@ class PostsDataModel extends ApiObject<PostsDataModel> {
   @override
   Map<String, dynamic>? toMap(PostsDataModel object) {
     final Map<String, dynamic> data = <String, dynamic>{};
-    if (object != null) {
-      data['body'] = object.body;
-      data['id'] = object.id;
-      data['title'] = object.title;
-      data['userId'] = object.userId;
-      return data;
-    } else {
-      return null;
-    }
+    // if (object != null) {
+    data['body'] = object.body;
+    data['id'] = object.id;
+    data['title'] = object.title;
+    data['userId'] = object.userId;
+    return data;
+    // } else {
+    //   return null;
+    // }
   }
 
   @override
