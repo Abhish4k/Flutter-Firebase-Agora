@@ -1,6 +1,6 @@
 import 'package:flutter_agora_video_call/app_api_service/app_api_service.dart';
 import 'package:flutter_agora_video_call/app_models/app_service_model/posts_data_model.dart';
-import 'package:flutter_agora_video_call/app_models/greeting_model.dart';
+import 'package:flutter_agora_video_call/app_models/app_ui_models/greetings_model/greeting_model.dart';
 import 'package:flutter_agora_video_call/helper/data_helper.dart';
 import 'package:flutter_agora_video_call/utils/app_color.dart';
 import 'package:get/get.dart';

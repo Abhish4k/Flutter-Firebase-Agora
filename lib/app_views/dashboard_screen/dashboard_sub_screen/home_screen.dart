@@ -5,7 +5,6 @@ import 'package:flutter_agora_video_call/utils/app_color.dart';
 import 'package:flutter_agora_video_call/utils/app_const_size.dart';
 import 'package:flutter_agora_video_call/utils/app_images.dart';
 import 'package:flutter_agora_video_call/utils/image_assets.dart';
-import 'package:flutter_agora_video_call/app_models/app_ui_models/greetings_model/greeting_model.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
