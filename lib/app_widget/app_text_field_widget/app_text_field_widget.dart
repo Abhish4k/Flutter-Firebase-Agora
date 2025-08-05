@@ -25,18 +25,22 @@ class AppTextFieldWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          textWidget(
-            text: title,
-            fontSize: AppConstSize.size14,
-            fontWeight: FontWeight.w400,
-            colour: AppColor.dotColor,
-          ),
+          title.isNotEmpty
+              ? textWidget(
+                  text: title,
+                  fontSize: AppConstSize.size14,
+                  fontWeight: FontWeight.w400,
+                  colour: AppColor.dotColor,
+                )
+              : SizedBox(),
           Container(
             height: AppConstSize.size55,
             width: appWidth(context: context),
             padding: EdgeInsets.symmetric(horizontal: AppConstSize.size10),
             decoration: BoxDecoration(
-              border: Border.all(color: AppColor.themeColor),
+              border: Border.all(
+                color: AppColor.dotColor.withValues(alpha: 0.7),
+              ),
               borderRadius: BorderRadius.circular(AppConstSize.size15),
             ),
             child: TextFieldWidget(

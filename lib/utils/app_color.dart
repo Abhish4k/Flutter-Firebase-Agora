@@ -31,7 +31,7 @@ class AppColor {
   static const Color greyGradiantTwo = Color(0xffB9C7E5);
 
   static const LinearGradient primaryGradient = LinearGradient(
-    colors: [themeColor, secondaryColor],
+    colors: [dotColor, secondaryColor],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

@@ -46,15 +46,19 @@ class DashBoardAppBarWidget extends StatelessWidget {
             fontWeight: FontWeight.bold,
             colour: AppColor.white,
           ),
-          imageAsset(
-            image: currentIndex == HOME_INDEX
-                ? AppImages.notificationImg
-                : currentIndex == CONNECTIONS_INDEX
-                ? AppImages.chatImg
-                : AppImages.editImg,
-            color: AppColor.white,
-            height: AppConstSize.size25,
-            width: AppConstSize.size25,
+          GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: getDashboardAppBarIconTap(),
+            child: imageAsset(
+              image: currentIndex == HOME_INDEX
+                  ? AppImages.notificationImg
+                  : currentIndex == CONNECTIONS_INDEX
+                  ? AppImages.chatImg
+                  : AppImages.editImg,
+              color: AppColor.white,
+              height: AppConstSize.size25,
+              width: AppConstSize.size25,
+            ),
           ),
         ],
       ),
@@ -77,5 +81,30 @@ class DashBoardAppBarWidget extends StatelessWidget {
         dashBoardAppBarTitle = AppStrings.home;
     }
     return dashBoardAppBarTitle;
+  }
+
+  Function() getDashboardAppBarIconTap() {
+    switch (currentIndex) {
+      case HOME_INDEX:
+        return () {
+          print('Notification tapped on home screen');
+          // Add notification logic here
+        };
+      case CONNECTIONS_INDEX:
+        return () {
+          print('Chat tapped on connections screen');
+          // Add chat logic here
+        };
+      case PROFILE_INDEX:
+        return () {
+          print('Edit tapped on profile screen');
+          // Add edit profile logic here
+        };
+      default:
+        return () {
+          print('Default action tapped');
+          // Add default logic here
+        };
+    }
   }
 }

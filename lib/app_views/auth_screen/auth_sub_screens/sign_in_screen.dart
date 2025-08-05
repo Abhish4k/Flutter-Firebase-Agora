@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_agora_video_call/app_click_listeners/app_click_listeners.dart';
+import 'package:flutter_agora_video_call/app_widget/app_text_field_widget/app_text_field_widget.dart';
 import 'package:flutter_agora_video_call/app_widget/text_field_widget/text_field_widget.dart';
 import 'package:flutter_agora_video_call/app_widget/text_widget/text_widget.dart';
 import 'package:flutter_agora_video_call/utils/app_color.dart';
@@ -44,32 +45,15 @@ class SigninScreen extends StatelessWidget {
                 colour: AppColor.textColor,
               ),
               SizedBox(height: AppConstSize.size50),
-              Container(
-                height: AppConstSize.size55,
-                width: appWidth(context: context),
-                padding: EdgeInsets.symmetric(horizontal: AppConstSize.size10),
-                decoration: BoxDecoration(
-                  border: Border.all(color: AppColor.themeColor),
-                  borderRadius: BorderRadius.circular(AppConstSize.size15),
-                ),
-                child: TextFieldWidget(
-                  textFieldController: emailController,
-                  hint: AppStrings.email,
-                ),
+              AppTextFieldWidget(
+                textEditingController: emailController,
+                title: "",
+                hintText: AppStrings.email,
               ),
-              SizedBox(height: AppConstSize.size20),
-              Container(
-                height: AppConstSize.size55,
-                width: appWidth(context: context),
-                padding: EdgeInsets.symmetric(horizontal: AppConstSize.size10),
-                decoration: BoxDecoration(
-                  border: Border.all(color: AppColor.themeColor),
-                  borderRadius: BorderRadius.circular(AppConstSize.size15),
-                ),
-                child: TextFieldWidget(
-                  textFieldController: passwordController,
-                  hint: AppStrings.password,
-                ),
+              AppTextFieldWidget(
+                textEditingController: passwordController,
+                title: "",
+                hintText: AppStrings.password,
               ),
               SizedBox(height: AppConstSize.size10),
 
