@@ -1,4 +1,4 @@
-import 'package:flutter_agora_video_call/app_models/auth_request_model.dart';
+import 'package:flutter_agora_video_call/app_models/app_request_models/auth_request_model.dart';
 import 'package:flutter_agora_video_call/helper/data_helper.dart';
 import 'package:flutter_agora_video_call/utils/app_color.dart';
 import 'package:flutter_agora_video_call/utils/app_strings.dart';

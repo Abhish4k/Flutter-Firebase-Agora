@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColor {
   static const Color themeColor = Color(0xff3252E7);
-  static const Color secondaryColor = Color(0xff02F4FB);
+  static const Color secondaryColor = Color(0xff598392);
   static const Color transparentThemeColor = Color(0xffC0C4D1);
   static const Color primaryColor = Color(0xff2872EB);
   static const Color greenColor = Color(0xff94C353);
@@ -13,7 +13,8 @@ class AppColor {
   static const Color dialogStatusBarColor = Color(0xff00aecb);
   static const Color blueColor = Color(0xff004FC8);
   static const Color lightTextColor = Color(0xffAAB0C7);
-  static const Color dotColor = Color(0xff404A74);
+  static const Color dotColor = Color(0xff124559);
+  // static const Color dotColor = Color.fromARGB(255, 164, 228, 255);
   static const Color textColor = Color(0xff848BA5);
   static const Color white = Color(0xffffffff);
   static const Color black = Color(0xff000000);

@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_agora_video_call/app_enums/auth_enums/auth_enums.dart';
-import 'package:flutter_agora_video_call/app_models/auth_request_model.dart';
+import 'package:flutter_agora_video_call/app_models/app_request_models/auth_request_model.dart';
 import 'package:get/get.dart';
 
 mixin AuthMixin {

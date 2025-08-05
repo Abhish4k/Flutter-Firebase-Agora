@@ -5,14 +5,14 @@ import 'package:flutter_agora_video_call/utils/app_images.dart';
 import 'package:flutter_agora_video_call/utils/app_strings.dart';
 import 'package:flutter_agora_video_call/utils/dashboard_screen_indexes.dart';
 
-class AppBarModel {
+class DashboardAppBarModel {
   final String title;
   final String icon;
   final AppBarAction iconAction;
   final bool showBackButton;
   final AppBarAction? backAction;
 
-  const AppBarModel({
+  const DashboardAppBarModel({
     required this.title,
     required this.icon,
     required this.iconAction,
@@ -28,18 +28,18 @@ class AppBarModel {
       });
 }
 
-class AppBarConfig {
-  static AppBarModel getAppBarConfig(int currentIndex) {
+class DashboardAppBarConfig {
+  static DashboardAppBarModel getAppBarConfig(int currentIndex) {
     switch (currentIndex) {
       case HOME_INDEX:
-        return AppBarModel(
+        return DashboardAppBarModel(
           title: AppStrings.home,
           icon: AppImages.notificationImg,
           iconAction: const AppBarAction(type: AppBarActionType.notification),
           showBackButton: false,
         );
       case CONNECTIONS_INDEX:
-        return AppBarModel(
+        return DashboardAppBarModel(
           title: AppStrings.connections,
           icon: AppImages.chatImg,
           iconAction: const AppBarAction(type: AppBarActionType.chat),
@@ -47,7 +47,7 @@ class AppBarConfig {
           backAction: const AppBarAction(type: AppBarActionType.back),
         );
       case PROFILE_INDEX:
-        return AppBarModel(
+        return DashboardAppBarModel(
           title: AppStrings.profile,
           icon: AppImages.editImg,
           iconAction: const AppBarAction(type: AppBarActionType.edit),
@@ -55,7 +55,7 @@ class AppBarConfig {
           backAction: const AppBarAction(type: AppBarActionType.back),
         );
       default:
-        return AppBarModel(
+        return DashboardAppBarModel(
           title: AppStrings.home,
           icon: AppImages.notificationImg,
           iconAction: const AppBarAction(type: AppBarActionType.notification),

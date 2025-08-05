@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_agora_video_call/app_models/bottom_navigation_model/bottom_navigation_model.dart';
+import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_models/bottom_navigation_model/bottom_navigation_model.dart';
 import 'package:flutter_agora_video_call/utils/app_const_size.dart';
 import 'package:get/get.dart';
 import '../../utils/app_color.dart';

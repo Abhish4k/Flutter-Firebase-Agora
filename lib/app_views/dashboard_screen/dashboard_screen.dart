@@ -23,11 +23,13 @@ class DashboardScreen extends StatelessWidget {
             DashBoardAppBarWidget(
               currentIndex: dashboardController.screenIndex.value,
             ),
-
-            SingleChildScrollView(
-              physics: const AlwaysScrollableScrollPhysics(),
-              child: dashboardController.fetchScreenList().elementAt(
-                dashboardController.screenIndex.value,
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: AppConstSize.size15),
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                child: dashboardController.fetchScreenList().elementAt(
+                  dashboardController.screenIndex.value,
+                ),
               ),
             ),
           ],

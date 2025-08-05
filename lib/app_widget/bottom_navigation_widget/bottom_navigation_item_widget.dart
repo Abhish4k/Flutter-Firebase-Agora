@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_agora_video_call/app_models/bottom_navigation_model/bottom_navigation_model.dart';
+import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_models/bottom_navigation_model/bottom_navigation_model.dart';
 import 'package:flutter_agora_video_call/app_widget/text_widget/text_widget.dart';
 import 'package:flutter_agora_video_call/utils/app_color.dart';
 import 'package:flutter_agora_video_call/utils/app_const_size.dart';

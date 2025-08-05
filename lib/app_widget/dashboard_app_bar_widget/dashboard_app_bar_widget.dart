@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_agora_video_call/app_mixins/dashboard_mixin/dashboard_mixin.dart';
 import 'package:flutter_agora_video_call/app_widget/text_widget/text_widget.dart';
 import 'package:flutter_agora_video_call/main.dart';
 import 'package:flutter_agora_video_call/utils/app_color.dart';
@@ -28,7 +29,7 @@ class DashBoardAppBarWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           currentIndex == HOME_INDEX
-              ? SizedBox()
+              ? _homeUserGreetingWidget(context: context)
               : GestureDetector(
                   behavior: HitTestBehavior.translucent,
                   onTap: () =>
@@ -41,7 +42,7 @@ class DashBoardAppBarWidget extends StatelessWidget {
                   ),
                 ),
           textWidget(
-            text: getDashboardAppBarTitle(),
+            text: currentIndex == HOME_INDEX ? "" : getDashboardAppBarTitle(),
             fontSize: AppTextSize.normalTextSize(context: context),
             fontWeight: FontWeight.bold,
             colour: AppColor.white,
@@ -106,5 +107,56 @@ class DashBoardAppBarWidget extends StatelessWidget {
           // Add default logic here
         };
     }
+  }
+
+  _homeUserGreetingWidget({required BuildContext context}) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Container(
+          padding: EdgeInsets.all(AppConstSize.size10),
+          decoration: BoxDecoration(
+            gradient: AppColor.greyGradiant,
+            borderRadius: BorderRadius.circular(AppConstSize.size25),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(AppConstSize.size25),
+            child: imageAsset(
+              image: AppImages.profileSelectedIcon,
+              height: AppConstSize.size25,
+              width: AppConstSize.size25,
+            ),
+          ),
+        ),
+        SizedBox(width: AppConstSize.size10),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            textWidget(
+              text: "Hey! Abhishek",
+              fontWeight: FontWeight.bold,
+              colour: AppColor.white,
+              fontSize: AppTextSize.smallTextSize(context: context),
+            ),
+            textWidget(
+              text: dashboardController.greetingText().greeting,
+              fontWeight: FontWeight.bold,
+              colour: AppColor.white,
+              fontSize: AppTextSize.smallTextSize(context: context),
+            ),
+            textWidget(
+              text: dashboardController.greetingText().message,
+              fontWeight: FontWeight.w400,
+              colour: AppColor.white,
+              fontSize: AppTextSize.smallTextSize(context: context),
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }
