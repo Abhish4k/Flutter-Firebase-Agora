@@ -10,8 +10,8 @@ import 'package:flutter_agora_video_call/utils/app_strings.dart';
 import 'package:flutter_agora_video_call/utils/app_text_sizes.dart';
 import 'package:flutter_agora_video_call/utils/image_assets.dart';
 
-class QuickActionsAppBarWidget extends StatelessWidget {
-  QuickActionsAppBarWidget({super.key});
+class HomeSubAppBarWidget extends StatelessWidget {
+  HomeSubAppBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class QuickActionsAppBarWidget extends StatelessWidget {
             ),
           ),
           textWidget(
-            text: getQuickActionsAppBarTitle(
+            text: getHomeSubAppBarTitle(
               qAEnum: HomeMixin.getQuickActionSelectedValue.value,
             ),
             fontSize: AppTextSize.normalTextSize(context: context),
@@ -51,16 +51,18 @@ class QuickActionsAppBarWidget extends StatelessWidget {
     );
   }
 
-  String getQuickActionsAppBarTitle({required QuickActionsEnum qAEnum}) {
+  String getHomeSubAppBarTitle({required HomeSubEnum qAEnum}) {
     switch (qAEnum) {
-      case QuickActionsEnum.askAI:
+      case HomeSubEnum.askAI:
         return AppStrings.homeQuickActionsTitle1;
-      case QuickActionsEnum.startCall:
+      case HomeSubEnum.startCall:
         return AppStrings.homeQuickActionsTitle2;
-      case QuickActionsEnum.myConnections:
+      case HomeSubEnum.myConnections:
         return AppStrings.homeQuickActionsTitle3;
-      case QuickActionsEnum.tasks:
+      case HomeSubEnum.tasks:
         return AppStrings.homeQuickActionsTitle4;
+      case HomeSubEnum.upcommingMeetings:
+        return AppStrings.upcomingMeetings;
     }
   }
 }

@@ -39,7 +39,7 @@ class AppClickListeners {
   }
 
   static goToQuickActionsScreen() {
-    Get.offAllNamed(Routes.quickActionsScreen);
+    Get.offAllNamed(Routes.homeSubScreen);
     DataHelper.logValue(
       "QucickActionEnum",
       dashboardController.getQuickActionsEnum.value,

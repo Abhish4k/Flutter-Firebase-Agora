@@ -19,6 +19,10 @@ class AppImages {
       "${appImagesPath}profile_selected_image.png";
   static const profileUnselectedIcon =
       "${appImagesPath}profile_unselected_image.png";
+  static const quickActionImage1 = "${appImagesPath}ask_ai_image.png";
+  static const quickActionImage2 = "${appImagesPath}start_call_image.png";
+  static const quickActionImage3 = "${appImagesPath}my_connections_image.png";
+  static const quickActionImage4 = "${appImagesPath}notes_tasks_image.png";
 
   // SVG Icons
   static const googleSvg = "${appIconsPath}google_icon.svg";

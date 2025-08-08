@@ -2,11 +2,10 @@ import 'package:flutter_agora_video_call/app_enums/dashboard_enum/quick_actions_
 import 'package:get/get.dart';
 
 mixin HomeMixin {
-  static Rx<QuickActionsEnum> quickActionSelectedValue =
-      QuickActionsEnum.askAI.obs;
-  static Rx<QuickActionsEnum> get getQuickActionSelectedValue =>
+  static Rx<HomeSubEnum> quickActionSelectedValue = HomeSubEnum.askAI.obs;
+  static Rx<HomeSubEnum> get getQuickActionSelectedValue =>
       quickActionSelectedValue;
-  static set setQuickActionSelectedValue(QuickActionsEnum qEnum) {
+  static set setQuickActionSelectedValue(HomeSubEnum qEnum) {
     quickActionSelectedValue.value = qEnum;
   }
 }

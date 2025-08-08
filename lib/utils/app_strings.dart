@@ -31,10 +31,7 @@ class AppStrings {
   static const String homeQuickActionsTitle2 = "Start Call";
   static const String homeQuickActionsTitle3 = "My Connections";
   static const String homeQuickActionsTitle4 = "Tasks";
-  static const String homeQuickActionsEmoji1 = "🧠";
-  static const String homeQuickActionsEmoji2 = "📞";
-  static const String homeQuickActionsEmoji3 = "👥";
-  static const String homeQuickActionsEmoji4 = "📝";
+  static const String upcomingMeetings = "Upcoming Meetings";
   static const String noRecord = "No Record";
   static const String timeoutError = "Timeout Error";
   static const String checkInternetConnection = "Check Internet Connection";

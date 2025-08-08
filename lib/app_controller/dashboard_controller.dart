@@ -7,7 +7,7 @@ import 'package:flutter_agora_video_call/app_models/app_ui_models/auth_ui_models
 import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_models/home_ui_models/greetings_model/greeting_model.dart';
 import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_models/home_ui_models/quick_actions_model.dart';
 import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/connections_screen.dart';
-import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/home_screen.dart';
+import 'package:flutter_agora_video_call/app_views/dashboard_screen/home_screen/home_screen.dart';
 import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/profile_screen.dart';
 import 'package:flutter_agora_video_call/helper/data_helper.dart';
 import 'package:flutter_agora_video_call/main.dart';
@@ -186,20 +186,20 @@ class DashboardController extends GetxController {
     }
   }
 
-  Rx<QuickActionsEnum> quickActionEnum = QuickActionsEnum.askAI.obs;
-  Rx<QuickActionsEnum> get getQuickActionsEnum => quickActionEnum;
-  set setAuthEnum(QuickActionsEnum qAEnum) {
+  Rx<HomeSubEnum> quickActionEnum = HomeSubEnum.askAI.obs;
+  Rx<HomeSubEnum> get getQuickActionsEnum => quickActionEnum;
+  set setAuthEnum(HomeSubEnum qAEnum) {
     quickActionEnum.value = qAEnum;
   }
 
   List<QuickActionsModel> fetchHomeQuickActionsList() {
     homeQuickActionsList = [
       QuickActionsModel(
-        quickActionEmoji: AppStrings.homeQuickActionsEmoji1,
+        quickActionImage: AppImages.quickActionImage1,
         quickActionTitle: AppStrings.homeQuickActionsTitle1,
         isSelected: false,
         onTap: () {
-          HomeMixin.setQuickActionSelectedValue = QuickActionsEnum.askAI;
+          HomeMixin.setQuickActionSelectedValue = HomeSubEnum.askAI;
           AppClickListeners.goToQuickActionsScreen();
           DataHelper.logValue(
             "QuickActionSelectedEnumValue",
@@ -208,11 +208,11 @@ class DashboardController extends GetxController {
         },
       ),
       QuickActionsModel(
-        quickActionEmoji: AppStrings.homeQuickActionsEmoji2,
+        quickActionImage: AppImages.quickActionImage2,
         quickActionTitle: AppStrings.homeQuickActionsTitle2,
         isSelected: false,
         onTap: () {
-          HomeMixin.setQuickActionSelectedValue = QuickActionsEnum.startCall;
+          HomeMixin.setQuickActionSelectedValue = HomeSubEnum.startCall;
           AppClickListeners.goToQuickActionsScreen();
           DataHelper.logValue(
             "QuickActionSelectedEnumValue",
@@ -221,12 +221,12 @@ class DashboardController extends GetxController {
         },
       ),
       QuickActionsModel(
-        quickActionEmoji: AppStrings.homeQuickActionsEmoji3,
+        quickActionImage: AppImages.quickActionImage3,
+
         quickActionTitle: AppStrings.homeQuickActionsTitle3,
         isSelected: false,
         onTap: () {
-          HomeMixin.setQuickActionSelectedValue =
-              QuickActionsEnum.myConnections;
+          HomeMixin.setQuickActionSelectedValue = HomeSubEnum.myConnections;
           AppClickListeners.goToQuickActionsScreen();
           DataHelper.logValue(
             "QuickActionSelectedEnumValue",
@@ -235,11 +235,11 @@ class DashboardController extends GetxController {
         },
       ),
       QuickActionsModel(
-        quickActionEmoji: AppStrings.homeQuickActionsEmoji4,
+        quickActionImage: AppImages.quickActionImage4,
         quickActionTitle: AppStrings.homeQuickActionsTitle4,
         isSelected: false,
         onTap: () {
-          HomeMixin.setQuickActionSelectedValue = QuickActionsEnum.tasks;
+          HomeMixin.setQuickActionSelectedValue = HomeSubEnum.tasks;
           AppClickListeners.goToQuickActionsScreen();
           DataHelper.logValue(
             "QuickActionSelectedEnumValue",
