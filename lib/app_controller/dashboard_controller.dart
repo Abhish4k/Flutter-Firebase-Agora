@@ -1,13 +1,19 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_agora_video_call/app_click_listeners/app_click_listeners.dart';
+import 'package:flutter_agora_video_call/app_enums/dashboard_enum/quick_actions_enum.dart';
+import 'package:flutter_agora_video_call/app_mixins/dashboard_mixin/home_mixin.dart';
 import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_models/bottom_navigation_model/bottom_navigation_model.dart';
 import 'package:flutter_agora_video_call/app_models/app_ui_models/auth_ui_models/otp_model.dart/otp_model.dart';
 import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_models/home_ui_models/greetings_model/greeting_model.dart';
+import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_models/home_ui_models/quick_actions_model.dart';
 import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/connections_screen.dart';
 import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/home_screen.dart';
 import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/profile_screen.dart';
+import 'package:flutter_agora_video_call/helper/data_helper.dart';
+import 'package:flutter_agora_video_call/main.dart';
 import 'package:flutter_agora_video_call/utils/app_images.dart';
 import 'package:flutter_agora_video_call/utils/app_strings.dart';
-import 'package:flutter_agora_video_call/utils/dashboard_screen_indexes.dart';
+import 'package:flutter_agora_video_call/utils/screen_index_handlers/dashboard_screen_indexes.dart';
 import 'package:get/get.dart';
 import '../utils/app_text_controller.dart';
 
@@ -17,6 +23,9 @@ class DashboardController extends GetxController {
   List<FocusNode> otpFocusList = <FocusNode>[];
   RxList<Widget> screenList = <Widget>[].obs;
   RxInt screenIndex = HOME_INDEX.obs;
+  RxInt quickActionScreenIndex = 50.obs;
+  List<QuickActionsModel> homeQuickActionsList = <QuickActionsModel>[];
+
   // RxList<BottomNavigationModel> homeList = <BottomNavigationModel>[].obs;
 
   @override
@@ -177,82 +186,70 @@ class DashboardController extends GetxController {
     }
   }
 
-  /*  void onTap({
-    required int index,
-  }) {
-    screenIndex.value = index;
-    loadScreenData(
-      index: index,
-    );
+  Rx<QuickActionsEnum> quickActionEnum = QuickActionsEnum.askAI.obs;
+  Rx<QuickActionsEnum> get getQuickActionsEnum => quickActionEnum;
+  set setAuthEnum(QuickActionsEnum qAEnum) {
+    quickActionEnum.value = qAEnum;
   }
-  */
 
-  /* void loadScreenData({
-    required int index,
-  }) {
-    switch (index) {
-      case HOME_INDEX:
-        getHomeData();
-        break;
-
-      case REPORT_INDEX:
-        fetchReportData();
-        break;
-
-      case NOTIFICATION_INDEX:
-        fetchNotificationData();
-        break;
-
-      case PROFILE_INDEX:
-        getProfileData();
-        break;
-    }
-  }
-  */
-
-  /*  void getHomeData() async {
-    fetchHomeList();
-    DashboardMixin.setHomeData = AppStrings.parkLocator;
-    if (AppStorageHelper.getUserName.isNotEmpty) {
-      DashboardMixin.setUserName = AppStorageHelper.getUserName;
-    }
-    await ParkMixin.callGetAllParkApi(
-      filter: "",
-    );
-  } */
-
-  /* void fetchNotificationData() async {
-    await NotificationMixin.callNotificationApi();
-  }  */
-
-  /* void getProfileData() async {
-    if (AppStorageHelper.getUserId.isNotEmpty) {
-      await AuthMixin.callProfileInfoApi(
-        userId: AppStorageHelper.getUserId,
-      );
-    }
-  }
-   */
-
-  /* RxList<BottomNavigationModel> fetchHomeList() {
-    homeList.value = [
-      BottomNavigationModel(
-        selectedImage: AppImages.locationIcon,
-        unselectedImage: AppImages.locationIcon,
-        onTab: () => AppClickListener.onTabParkButton(),
-        isSvg: true,
-        title: AppStrings.parkLocator,
+  List<QuickActionsModel> fetchHomeQuickActionsList() {
+    homeQuickActionsList = [
+      QuickActionsModel(
+        quickActionEmoji: AppStrings.homeQuickActionsEmoji1,
+        quickActionTitle: AppStrings.homeQuickActionsTitle1,
+        isSelected: false,
+        onTap: () {
+          HomeMixin.setQuickActionSelectedValue = QuickActionsEnum.askAI;
+          AppClickListeners.goToQuickActionsScreen();
+          DataHelper.logValue(
+            "QuickActionSelectedEnumValue",
+            dashboardController.getQuickActionsEnum.value,
+          );
+        },
       ),
-      BottomNavigationModel(
-        selectedImage: AppImages.workoutIcon,
-        unselectedImage: AppImages.workoutIcon,
-        onTab: () {},
-        isSvg: true,
-        title: AppStrings.workout,
+      QuickActionsModel(
+        quickActionEmoji: AppStrings.homeQuickActionsEmoji2,
+        quickActionTitle: AppStrings.homeQuickActionsTitle2,
+        isSelected: false,
+        onTap: () {
+          HomeMixin.setQuickActionSelectedValue = QuickActionsEnum.startCall;
+          AppClickListeners.goToQuickActionsScreen();
+          DataHelper.logValue(
+            "QuickActionSelectedEnumValue",
+            dashboardController.getQuickActionsEnum.value,
+          );
+        },
+      ),
+      QuickActionsModel(
+        quickActionEmoji: AppStrings.homeQuickActionsEmoji3,
+        quickActionTitle: AppStrings.homeQuickActionsTitle3,
+        isSelected: false,
+        onTap: () {
+          HomeMixin.setQuickActionSelectedValue =
+              QuickActionsEnum.myConnections;
+          AppClickListeners.goToQuickActionsScreen();
+          DataHelper.logValue(
+            "QuickActionSelectedEnumValue",
+            dashboardController.getQuickActionsEnum.value,
+          );
+        },
+      ),
+      QuickActionsModel(
+        quickActionEmoji: AppStrings.homeQuickActionsEmoji4,
+        quickActionTitle: AppStrings.homeQuickActionsTitle4,
+        isSelected: false,
+        onTap: () {
+          HomeMixin.setQuickActionSelectedValue = QuickActionsEnum.tasks;
+          AppClickListeners.goToQuickActionsScreen();
+          DataHelper.logValue(
+            "QuickActionSelectedEnumValue",
+            dashboardController.getQuickActionsEnum.value,
+          );
+        },
       ),
     ];
-    return homeList;
-  } */
+    return homeQuickActionsList;
+  }
 
   void disposeFocusNode() {
     oneFocus!.dispose();

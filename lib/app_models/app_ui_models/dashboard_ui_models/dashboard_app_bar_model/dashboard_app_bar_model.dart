@@ -3,7 +3,7 @@ import 'package:flutter_agora_video_call/app_enums/app_bar_action_enum/app_bar_a
 import 'package:flutter_agora_video_call/main.dart';
 import 'package:flutter_agora_video_call/utils/app_images.dart';
 import 'package:flutter_agora_video_call/utils/app_strings.dart';
-import 'package:flutter_agora_video_call/utils/dashboard_screen_indexes.dart';
+import 'package:flutter_agora_video_call/utils/screen_index_handlers/dashboard_screen_indexes.dart';
 
 class DashboardAppBarModel {
   final String title;

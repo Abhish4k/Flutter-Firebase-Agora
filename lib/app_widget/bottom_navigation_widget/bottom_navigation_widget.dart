@@ -34,7 +34,7 @@ class BottomNavigationWidget extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         boxShadow: kElevationToShadow[2],
-        color: AppColor.white,
+        color: AppColor.darkTealBlue,
         borderRadius: BorderRadius.circular(AppConstSize.size70),
       ),
       child: Container(

@@ -17,6 +17,7 @@ class AppColor {
   // static const Color dotColor = Color.fromARGB(255, 164, 228, 255);
   static const Color textColor = Color(0xff848BA5);
   static const Color white = Color(0xffffffff);
+  static const Color darkTealBlue = Color(0xff264653);
   static const Color black = Color(0xff000000);
   static const Color grey = Color(0xff555454);
   static const Color lightGrey = Color(0xffCACED7);
@@ -30,6 +31,8 @@ class AppColor {
   static const Color transparent = Color(0x00ffffff);
   static const Color greyGradiantOne = Color(0xffB2DBE7);
   static const Color greyGradiantTwo = Color(0xffB9C7E5);
+  static const Color bottomNavGradiantOne = Color(0xff264653);
+  static const Color bottomNavGradiantTwo = Color(0xff1D3557);
 
   static const LinearGradient primaryGradient = LinearGradient(
     colors: [dotColor, secondaryColor],
@@ -44,6 +47,12 @@ class AppColor {
 
   static const LinearGradient greyGradiant = LinearGradient(
     colors: [greyGradiantOne, greyGradiantTwo],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const LinearGradient bottomNavGradiant = LinearGradient(
+    colors: [bottomNavGradiantOne, bottomNavGradiantTwo],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

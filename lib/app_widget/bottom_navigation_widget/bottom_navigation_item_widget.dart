@@ -60,8 +60,8 @@ class BottomNavigationItemWidget extends StatelessWidget {
                     width: AppConstSize.size30,
                     height: AppConstSize.size30,
                     color: isSelected.value
-                        ? AppColor.dotColor
-                        : AppColor.dotColor.withValues(alpha: 0.8),
+                        ? AppColor.white
+                        : AppColor.white.withValues(alpha: 0.5),
                     boxFit: BoxFit.fill,
                   ),
           ),
@@ -69,9 +69,10 @@ class BottomNavigationItemWidget extends StatelessWidget {
             child: textWidget(
               text: bottomNavigationModel.title,
               height: AppConstSize.size0,
+              fontWeight: isSelected.value ? FontWeight.bold : FontWeight.w400,
               colour: isSelected.value
-                  ? AppColor.dotColor
-                  : AppColor.dotColor.withValues(alpha: 0.8),
+                  ? AppColor.white
+                  : AppColor.white.withValues(alpha: 0.5),
             ),
           ),
         ],
