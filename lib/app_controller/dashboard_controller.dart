@@ -6,9 +6,9 @@ import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_m
 import 'package:flutter_agora_video_call/app_models/app_ui_models/auth_ui_models/otp_model.dart/otp_model.dart';
 import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_models/home_ui_models/greetings_model/greeting_model.dart';
 import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_models/home_ui_models/quick_actions_model.dart';
-import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/connections_screen.dart';
+import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/connections_screen/connections_screen.dart';
+import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/profile_screen/profile_screen.dart';
 import 'package:flutter_agora_video_call/app_views/dashboard_screen/home_screen/home_screen.dart';
-import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/profile_screen.dart';
 import 'package:flutter_agora_video_call/helper/data_helper.dart';
 import 'package:flutter_agora_video_call/main.dart';
 import 'package:flutter_agora_video_call/utils/app_images.dart';
