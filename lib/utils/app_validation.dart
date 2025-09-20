@@ -6,7 +6,19 @@ import 'package:flutter_agora_video_call/utils/app_strings.dart';
 class AppValidations {
   // Sign Up Screen Validation Function
   static bool validateSignUp({required AuthRequestModel authRequestModel}) {
-    if (authRequestModel.email.isEmpty) {
+    if (authRequestModel.firstName.isEmpty) {
+      DataHelper.showAppToast(
+        bkgColor: AppColor.dotColor,
+        message: AppStrings.pleaseEnterFirstName,
+      );
+      return false;
+    } else if (authRequestModel.lastName.isEmpty) {
+      DataHelper.showAppToast(
+        bkgColor: AppColor.dotColor,
+        message: AppStrings.pleaseEnterLastName,
+      );
+      return false;
+    } else if (authRequestModel.email.isEmpty) {
       DataHelper.showAppToast(
         bkgColor: AppColor.dotColor,
         message: AppStrings.pleaseEnterEmail,
@@ -18,10 +30,24 @@ class AppValidations {
         message: AppStrings.pleaseEnterValidEmail,
       );
       return false;
-    } else if (!DataHelper.passwordValidation(authRequestModel.password)) {
+    } else if (authRequestModel.phoneNumber.isEmpty) {
       DataHelper.showAppToast(
         bkgColor: AppColor.dotColor,
-        message: AppStrings.passMustHaveSpecialCharLetterNumber,
+        message: AppStrings.pleaseEnterPhoneNumber,
+      );
+      return false;
+    } else if (!DataHelper.phoneNumberValidation(
+      authRequestModel.phoneNumber,
+    )) {
+      DataHelper.showAppToast(
+        bkgColor: AppColor.dotColor,
+        message: AppStrings.pleaseEnterAValidPhoneNumber,
+      );
+      return false;
+    } else if (authRequestModel.dob.isEmpty) {
+      DataHelper.showAppToast(
+        bkgColor: AppColor.dotColor,
+        message: AppStrings.pleaseEnterDob,
       );
       return false;
     } else if (authRequestModel.password.isEmpty) {
@@ -30,11 +56,25 @@ class AppValidations {
         message: AppStrings.pleaseEnterPassword,
       );
       return false;
+    } else if (!DataHelper.passwordValidation(authRequestModel.password)) {
+      DataHelper.showAppToast(
+        bkgColor: AppColor.dotColor,
+        message: AppStrings.pleaseEnterAValidPassword,
+      );
+      return false;
+    } else if (authRequestModel.confPass.isEmpty) {
+      DataHelper.showAppToast(
+        bkgColor: AppColor.dotColor,
+        message: AppStrings.pleaseEnterConfPass,
+      );
+      return false;
+    } else if (authRequestModel.password != authRequestModel.confPass) {
+      DataHelper.showAppToast(
+        bkgColor: AppColor.dotColor,
+        message: AppStrings.passwordDidNotMatch,
+      );
+      return false;
     }
-    DataHelper.showAppToast(
-      bkgColor: AppColor.dotColor,
-      message: AppStrings.accHasBeenCreatedSucessfully,
-    );
     return true;
   }
 

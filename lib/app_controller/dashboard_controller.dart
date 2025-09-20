@@ -8,7 +8,7 @@ import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_m
 import 'package:flutter_agora_video_call/app_models/app_ui_models/dashboard_ui_models/home_ui_models/quick_actions_model.dart';
 import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/connections_screen/connections_screen.dart';
 import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/profile_screen/profile_screen.dart';
-import 'package:flutter_agora_video_call/app_views/dashboard_screen/home_screen/home_screen.dart';
+import 'package:flutter_agora_video_call/app_views/dashboard_screen/dashboard_sub_screen/home_screen/home_screen.dart';
 import 'package:flutter_agora_video_call/helper/data_helper.dart';
 import 'package:flutter_agora_video_call/main.dart';
 import 'package:flutter_agora_video_call/utils/app_images.dart';
@@ -190,65 +190,6 @@ class DashboardController extends GetxController {
   Rx<HomeSubEnum> get getQuickActionsEnum => quickActionEnum;
   set setAuthEnum(HomeSubEnum qAEnum) {
     quickActionEnum.value = qAEnum;
-  }
-
-  List<QuickActionsModel> fetchHomeQuickActionsList() {
-    homeQuickActionsList = [
-      QuickActionsModel(
-        quickActionImage: AppImages.quickActionImage1,
-        quickActionTitle: AppStrings.homeQuickActionsTitle1,
-        isSelected: false,
-        onTap: () {
-          HomeMixin.setQuickActionSelectedValue = HomeSubEnum.askAI;
-          AppClickListeners.goToQuickActionsScreen();
-          DataHelper.logValue(
-            "QuickActionSelectedEnumValue",
-            dashboardController.getQuickActionsEnum.value,
-          );
-        },
-      ),
-      QuickActionsModel(
-        quickActionImage: AppImages.quickActionImage2,
-        quickActionTitle: AppStrings.homeQuickActionsTitle2,
-        isSelected: false,
-        onTap: () {
-          HomeMixin.setQuickActionSelectedValue = HomeSubEnum.startCall;
-          AppClickListeners.goToQuickActionsScreen();
-          DataHelper.logValue(
-            "QuickActionSelectedEnumValue",
-            dashboardController.getQuickActionsEnum.value,
-          );
-        },
-      ),
-      QuickActionsModel(
-        quickActionImage: AppImages.quickActionImage3,
-
-        quickActionTitle: AppStrings.homeQuickActionsTitle3,
-        isSelected: false,
-        onTap: () {
-          HomeMixin.setQuickActionSelectedValue = HomeSubEnum.myConnections;
-          AppClickListeners.goToQuickActionsScreen();
-          DataHelper.logValue(
-            "QuickActionSelectedEnumValue",
-            dashboardController.getQuickActionsEnum.value,
-          );
-        },
-      ),
-      QuickActionsModel(
-        quickActionImage: AppImages.quickActionImage4,
-        quickActionTitle: AppStrings.homeQuickActionsTitle4,
-        isSelected: false,
-        onTap: () {
-          HomeMixin.setQuickActionSelectedValue = HomeSubEnum.tasks;
-          AppClickListeners.goToQuickActionsScreen();
-          DataHelper.logValue(
-            "QuickActionSelectedEnumValue",
-            dashboardController.getQuickActionsEnum.value,
-          );
-        },
-      ),
-    ];
-    return homeQuickActionsList;
   }
 
   void disposeFocusNode() {

@@ -66,6 +66,16 @@ class AppStrings {
       "Keep your account secure with a strong password.";
   static const String pleaseEnterValidEmail = "Please Enter a Valid Email!";
   static const String pleaseEnterEmail = "Please Enter Email!";
+  static const String pleaseEnterFirstName = "Please Enter First name!";
+  static const String pleaseEnterLastName = "Please Enter Last name!";
+  static const String pleaseEnterPhoneNumber = "Please Enter Phone number!";
+  static const String pleaseEnterAValidPhoneNumber =
+      "Please Enter a valid phone number!";
+  static const String pleaseEnterAValidPassword =
+      "Please Enter a valid password!";
+  static const String pleaseEnterDob = "Please Enter Date of Birth !";
+  static const String pleaseEnterConfPass = "Please Confirm your password";
+  static const String passwordDidNotMatch = "Password not matched";
   static const String enterEmailorPhoneNo = "Email or phone number";
   static const String pleaseEnterPassword = "Please Enter Password!";
   static const String passLengthMustBeAtleast8Characters =
@@ -74,6 +84,7 @@ class AppStrings {
       "Password must have Minimum eight characters, at least one letter, one number and one special character";
   static const String accHasBeenCreatedSucessfully =
       "Account has been created sucessfully!";
+  static const String loginSucessfully = "Login sucess!";
 
   /// ------------- Dashboard Strings  ----------------///
   static const String home = "Home";

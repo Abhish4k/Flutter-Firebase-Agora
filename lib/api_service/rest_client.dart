@@ -101,7 +101,7 @@ class RestClient extends GetxService {
         DataHelper.logValue("isSuccessful", response.data);
 
         //  If the response is successful (status 200/201):
-        //  Checks if the data is a list (like a list of posts) or a single object.
+        //  Checks if the data is a list (like a list of posts) or a single Map object.
         //  If it’s a list: Converts each item in the list into a Dart object using your model’s fromMap method.
 
         final dynamic hashMap = response.data;

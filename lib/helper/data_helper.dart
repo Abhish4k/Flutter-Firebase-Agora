@@ -45,6 +45,13 @@ class DataHelper {
     ).hasMatch(email);
   }
 
+  static bool phoneNumberValidation(String phoneNumber) {
+    final regex = RegExp(
+      r'^(?:\+\d{1,3}\s?)?(?:\(?\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4}$',
+    );
+    return regex.hasMatch(phoneNumber.trim());
+  }
+
   static bool passwordValidation(String password) {
     return RegExp(
       r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$',
@@ -54,5 +61,10 @@ class DataHelper {
   static clearControllers() {
     emailController.clear();
     passwordController.clear();
+    firstNameController.clear();
+    lastNameController.clear();
+    confirmPasswordController.clear();
+    dobController.clear();
+    phoneController.clear();
   }
 }

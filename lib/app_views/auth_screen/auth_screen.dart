@@ -14,6 +14,7 @@ import 'package:flutter_agora_video_call/utils/app_const_size.dart';
 import 'package:flutter_agora_video_call/utils/app_images.dart';
 import 'package:flutter_agora_video_call/utils/app_status_bar.dart';
 import 'package:flutter_agora_video_call/utils/app_strings.dart';
+import 'package:flutter_agora_video_call/utils/app_text_controller.dart';
 import 'package:flutter_agora_video_call/utils/app_text_sizes.dart';
 import 'package:flutter_agora_video_call/utils/image_assets.dart';
 import 'package:get/get.dart';
@@ -122,9 +123,20 @@ class AuthScreen extends StatelessWidget {
   Function() getAuthButtonTap({required AuthEnum authEnum}) {
     switch (authEnum) {
       case AuthEnum.signUp:
-        return () => AppClickListeners.onSignUpButtonTap();
+        return () => AppClickListeners.onSignUpButtonTap(
+          email: emailController.text.toString().trim(),
+          password: passwordController.text.toString().trim(),
+          firstName: firstNameController.text.toString(),
+          lastName: lastNameController.text.toString(),
+          phoneNo: phoneController.text.toString(),
+          dob: dobController.text.toString(),
+          confPass: confirmPasswordController.text.toString(),
+        );
       case AuthEnum.signIn:
-        return () => AppClickListeners.onSignInButtonTap();
+        return () => AppClickListeners.onSignInButtonTap(
+          email: emailController.text.toString().trim(),
+          password: passwordController.text.toString().trim(),
+        );
       case AuthEnum.forgetPassword:
         return () => AppClickListeners.onForgetPasswordConfirmButtonTap();
       case AuthEnum.verifyOtp:

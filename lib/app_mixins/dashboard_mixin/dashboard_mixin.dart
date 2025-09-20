@@ -5,15 +5,17 @@ import 'package:flutter_agora_video_call/utils/app_color.dart';
 import 'package:get/get.dart';
 
 mixin DashboardMixin {
+  /*   
   static RxList<PostsDataModel> postsList = <PostsDataModel>[].obs;
 
   static RxList<PostsDataModel> get getPostsList => postsList;
 
   static set setPostsList(List<PostsDataModel> pList) {
     postsList.value = pList;
-  }
+  } 
+  */
 
-  static callGetPostsApi() async {
+  /*   static callGetPostsApi() async {
     DataHelper.isLoading.value = true;
     setPostsList = [];
     await AppApiService().callGetPostApi().then((value) {
@@ -32,4 +34,5 @@ mixin DashboardMixin {
       }
     });
   }
+ */
 }
