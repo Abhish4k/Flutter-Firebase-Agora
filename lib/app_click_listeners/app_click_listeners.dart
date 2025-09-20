@@ -3,7 +3,6 @@ import 'package:flutter_agora_video_call/app_enums/auth_enums/auth_enums.dart';
 import 'package:flutter_agora_video_call/app_mixins/auth_mixin/auth_mixin.dart';
 import 'package:flutter_agora_video_call/app_models/app_request_models/auth_request_model.dart';
 import 'package:flutter_agora_video_call/helper/data_helper.dart';
-import 'package:flutter_agora_video_call/main.dart';
 import 'package:flutter_agora_video_call/utils/app_color.dart';
 import 'package:flutter_agora_video_call/utils/app_strings.dart';
 import 'package:flutter_agora_video_call/utils/app_validation.dart';
