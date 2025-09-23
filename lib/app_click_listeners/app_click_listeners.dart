@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/services.dart';
 import 'package:flutter_agora_video_call/app_Routes/routes.dart';
 import 'package:flutter_agora_video_call/app_enums/auth_enums/auth_enums.dart';
 import 'package:flutter_agora_video_call/app_mixins/auth_mixin/auth_mixin.dart';
@@ -9,6 +12,14 @@ import 'package:flutter_agora_video_call/utils/app_validation.dart';
 import 'package:get/get.dart';
 
 class AppClickListeners {
+  static onAppExit() {
+    if (Platform.isAndroid) {
+      SystemNavigator.pop();
+    } else if (Platform.isIOS) {
+      exit(0);
+    }
+  }
+
   // Auth Screen Switches
   static goToSignInScreen() {
     AuthMixin.setAuthEnum = AuthEnum.signIn;
@@ -33,6 +44,10 @@ class AppClickListeners {
   static goToResetPasswordScreen() {
     AuthMixin.setAuthEnum = AuthEnum.resetPassword;
     DataHelper.logValue("key", AuthMixin.getAuthEnum.value);
+  }
+
+  static goToAuthScreen() {
+    Get.offAllNamed(Routes.authScreen);
   }
 
   static goToDashboardScreen() {

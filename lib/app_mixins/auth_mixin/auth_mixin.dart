@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_agora_video_call/app_enums/auth_enums/auth_enums.dart';
 import 'package:flutter_agora_video_call/app_models/app_request_models/auth_request_model.dart';
@@ -19,10 +20,13 @@ mixin AuthMixin {
     required AuthRequestModel authRequestModel,
   }) async {
     try {
-      return await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: authRequestModel.email.toString(),
-        password: authRequestModel.password.toString(),
-      );
+      UserCredential userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+            email: authRequestModel.email.toString(),
+            password: authRequestModel.password.toString(),
+          );
+      await saveUserProfile(authRequestModel: authRequestModel);
+      return userCredential;
     } on FirebaseAuthException catch (execption) {
       DataHelper.showAppToast(
         message: execption.message!,
@@ -43,6 +47,32 @@ mixin AuthMixin {
     } on FirebaseAuthException catch (e) {
       DataHelper.showAppToast(message: e.message!, bkgColor: AppColor.redColor);
       return null;
+    }
+  }
+
+  static Future<void> saveUserProfile({
+    required AuthRequestModel authRequestModel,
+  }) async {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      try {
+        return await FirebaseFirestore.instance
+            .collection("user-profiles")
+            .doc(user.uid)
+            .set({
+              "firstName": authRequestModel.firstName.toString(),
+              "lastName": authRequestModel.lastName.toString(),
+              "email": authRequestModel.email.toString(),
+              "phoneNumber": authRequestModel.phoneNumber.toString(),
+              "dob": authRequestModel.dob.toString(),
+              "createdAt": FieldValue.serverTimestamp(),
+            });
+      } on FirebaseException catch (e) {
+        DataHelper.showAppToast(
+          message: e.message ?? "Failed to save profile",
+          bkgColor: AppColor.redColor,
+        );
+      }
     }
   }
 }

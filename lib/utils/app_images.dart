@@ -2,7 +2,7 @@ class AppImages {
   static const appImagesPath = "assets/images/";
   static const appIconsPath = "assets/icons/";
 
-  static const signInImage = "${appImagesPath}sign_in_img.png";
+  static const appLogo = "${appImagesPath}app_logo.png";
   static const closeEyeImg = "${appImagesPath}close_eye.png";
   static const openEyeImg = "${appImagesPath}open_eye_icon.png";
   static const backImg = "${appImagesPath}arrow.png";
